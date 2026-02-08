@@ -14,7 +14,7 @@ export class LeadsService {
   create(dto: CreateLeadDto) {
     const lead = this.leadRepository.create({
       ...dto,
-      phone: dto.phone ? Number(dto.phone) : undefined,
+      phone: dto.phone ? String(dto.phone) : undefined,
     });
     return this.leadRepository.save(lead);
   }

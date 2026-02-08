@@ -11,8 +11,9 @@ export class Lead {
   @Column()
   email: string;
 
-  @Column()
-  phone: number;
+  @Column({ type: 'varchar', length: 20 })
+phone: string;
+
 
   @Column({ nullable: true })
   message: string;
