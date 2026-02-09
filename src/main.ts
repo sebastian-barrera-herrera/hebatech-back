@@ -10,10 +10,16 @@ async function bootstrap() {
 );
 
   app.enableCors({
-    origin: 'http://localhost:5173', // Vite
+    origin: 'https://hebatech.cloud', // Vite
     methods: ['GET', 'POST'],
     credentials: true,
   });
+
+  app.useGlobalPipes(
+  new ValidationPipe({
+    transform: true,
+  }),
+);
 
   await app.listen(process.env.PORT ?? 3000);
 }
